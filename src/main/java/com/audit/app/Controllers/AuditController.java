@@ -1,6 +1,7 @@
 package com.audit.app.Controllers;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -30,7 +31,22 @@ public class AuditController {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public ApiStatus logAudit(ChatAuditDTO dto) {
-		return _service.saveChatAudits(dto);
+		ApiStatus stat = null;
+		try{
+			stat = _service.saveChatAudits(dto);
+		}catch(Exception ex){
+			stat.setCode(512);
+			stat.setMessage(ex.getLocalizedMessage());
+			stat.setData(null);
+		}
+		return stat;
+	}
+	
+	@GET
+	@Path("/test")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String test() {
+		return "Test Successful..";
 	}
 	
 	@POST
@@ -38,6 +54,14 @@ public class AuditController {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public ApiStatus logStatusAudit(ChatStatusAuditDTO dto) {
-		return _stausService.saveStatusAudits(dto);
+		ApiStatus stat = null;
+		try{
+			stat = _stausService.saveStatusAudits(dto);
+		}catch(Exception ex){
+			stat.setCode(512);
+			stat.setMessage(ex.getLocalizedMessage());
+			stat.setData(null);
+		}
+		return stat;
 	}
 }
