@@ -15,6 +15,9 @@ public class ChatAuditDTO implements Serializable {
 	public String deptName;
 	public String locName;
 	public String userName;
+	public String userEmail;
+	public String sessionClosure;
+	public String sessionAttributes;
 
 	public int getId() {
 		return id;
@@ -87,4 +90,29 @@ public class ChatAuditDTO implements Serializable {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+	public String getSessionClosure() {
+		return sessionClosure;
+	}
+
+	public void setSessionClosure(String sessionClosure) {
+		this.sessionClosure = sessionClosure;
+	}
+
+	public String getSessionAttributes() {
+		return sessionAttributes;
+	}
+
+	public void setSessionAttributes(String sessionAttributes) {
+		this.sessionAttributes = sessionAttributes;
+	}
+
 }

@@ -47,6 +47,15 @@ public class ChatAudit implements Serializable {
 	@Column(name = "user_name", length = 255, nullable = false)
 	private String userName;
 	
+	@Column(name = "user_email", length = 100, nullable = false)
+	private String user_email;
+	
+	@Column(name = "session_closure", length = 255, nullable = false)
+	private String session_closure;
+	
+	@Column(name = "session_attributes", length = 255, nullable = false)
+	private String session_attributes;
+	
 	public ChatAudit(ChatAuditDTO dto) {
 		setDeptName(dto.getDeptName());
 		setLocName(dto.getLocName());
@@ -56,6 +65,9 @@ public class ChatAudit implements Serializable {
 		setStatus(dto.getStatus());
 		setUserName(dto.getUserName());
 		setUserUid(dto.getUserUid());
+		setUser_email(dto.getUserEmail());
+		setSession_attributes(dto.getSessionAttributes());
+		setSession_closure(dto.getSessionClosure());
 	}
 
 	public int getId() {
@@ -129,4 +141,29 @@ public class ChatAudit implements Serializable {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
+	public String getUser_email() {
+		return user_email;
+	}
+
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
+	}
+
+	public String getSession_closure() {
+		return session_closure;
+	}
+
+	public void setSession_closure(String session_closure) {
+		this.session_closure = session_closure;
+	}
+
+	public String getSession_attributes() {
+		return session_attributes;
+	}
+
+	public void setSession_attributes(String session_attributes) {
+		this.session_attributes = session_attributes;
+	}
+	
 }
