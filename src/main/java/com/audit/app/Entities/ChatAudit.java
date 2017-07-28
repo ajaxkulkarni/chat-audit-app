@@ -23,7 +23,7 @@ public class ChatAudit implements Serializable {
 	@Column(name = "id", unique = true, nullable = false)
 	private int id;
 
-	@Column(name = "status", length = 15, nullable = false)
+	@Column(name = "status", length = 15)
 	private String status;
 
 	@Column(name = "session_id", length = 11, nullable = false)
@@ -32,28 +32,28 @@ public class ChatAudit implements Serializable {
 	@Column(name = "session_timestamp", nullable = false)
 	private Date sessionTimestamp;
 
-	@Column(name = "user_uid", length = 255, nullable = false)
+	@Column(name = "user_uid", length = 255)
 	private String userUid;
 
-	@Column(name = "reason_name", length = 255, nullable = false)
+	@Column(name = "reason_name", length = 255)
 	private String reasonName;
 
-	@Column(name = "dept_name", length = 255, nullable = false)
+	@Column(name = "dept_name", length = 255)
 	private String deptName;
 
-	@Column(name = "loc_name", length = 255, nullable = false)
+	@Column(name = "loc_name", length = 255)
 	private String locName;
 
-	@Column(name = "user_name", length = 255, nullable = false)
+	@Column(name = "user_name", length = 255)
 	private String userName;
 	
-	@Column(name = "user_email", length = 100, nullable = false)
+	@Column(name = "user_email", length = 100)
 	private String user_email;
 	
-	@Column(name = "session_closure", length = 255, nullable = false)
+	@Column(name = "session_closure", length = 255)
 	private String session_closure;
 	
-	@Column(name = "session_attributes", length = 255, nullable = false)
+	@Column(name = "session_attributes", length = 255)
 	private String session_attributes;
 	
 	public ChatAudit(ChatAuditDTO dto) {
