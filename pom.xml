@@ -224,7 +224,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>chat</finalName>
+		<finalName>audit</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
