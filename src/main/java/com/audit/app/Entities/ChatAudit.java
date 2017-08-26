@@ -56,6 +56,9 @@ public class ChatAudit implements Serializable {
 	@Column(name = "session_attributes", length = 255)
 	private String session_attributes;
 	
+	public ChatAudit() {
+	}
+	
 	public ChatAudit(ChatAuditDTO dto) {
 		setDeptName(dto.getDeptName());
 		setLocName(dto.getLocName());

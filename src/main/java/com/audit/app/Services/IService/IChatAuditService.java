@@ -5,4 +5,5 @@ import com.audit.app.DTO.ChatAuditDTO;
 
 public interface IChatAuditService {
 	ApiStatus saveChatAudits(ChatAuditDTO dto);
+	ApiStatus updateUnique(ChatAuditDTO dto);
 }

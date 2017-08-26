@@ -3,6 +3,8 @@ package com.audit.app.DTO;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.audit.app.Entities.ChatAudit;
+
 public class ChatAuditDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -18,6 +20,18 @@ public class ChatAuditDTO implements Serializable {
 	public String userEmail;
 	public String sessionClosure;
 	public String sessionAttributes;
+	
+	public ChatAuditDTO() {
+	}
+
+	public ChatAuditDTO(ChatAudit chatAudit) {
+		setId(chatAudit.getId());
+		setStatus(chatAudit.getStatus());
+		setSessionId(chatAudit.getSessionId());
+		setSessionTimestamp(chatAudit.getSessionTimestamp());
+		setUserUid(chatAudit.getUserUid());
+		setUserName(chatAudit.getUserName());
+	}
 
 	public int getId() {
 		return id;
