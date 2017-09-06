@@ -42,22 +42,6 @@ public class AuditController {
 		return stat;
 	}
 	
-	@POST
-	@Path("/updateUnique")
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public ApiStatus getAudit(ChatAuditDTO dto) {
-		ApiStatus stat = null;
-		try{
-			stat = _service.updateUnique(dto);
-		}catch(Exception ex){
-			stat.setCode(512);
-			stat.setMessage(ex.getLocalizedMessage());
-			stat.setData(null);
-		}
-		return stat;
-	}
-	
 	@GET
 	@Path("/test")
 	@Produces(MediaType.APPLICATION_JSON)

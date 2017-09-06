@@ -1,5 +1,6 @@
 package com.audit.app.DAO.DAOImpl;
 
+import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -14,6 +15,7 @@ import com.audit.app.Entities.StatusAudit;
 @Service
 @Transactional
 public class StatusAuditDAO implements IStatusAuditDAO {
+	private static Logger LOG = Logger.getLogger(StatusAuditDAO.class);
 	
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -28,6 +30,7 @@ public class StatusAuditDAO implements IStatusAuditDAO {
 		status.setCode(200);
 		status.setMessage("Success");
 		status.setData(dto);
+		LOG.info("Status Audit Submitted to thread....");
 		return status;
 	}
 

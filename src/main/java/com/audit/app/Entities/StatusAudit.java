@@ -30,11 +30,14 @@ public class StatusAudit implements Serializable {
 	private String status;
 
 	@Column(name = "status_time", nullable = false)
-	private Date statusTime;
-	
+	private Date status_time;
+
+	public StatusAudit() {
+	}
+
 	public StatusAudit(ChatStatusAuditDTO dto) {
 		setStatus(dto.getStatus());
-		setStatusTime(new Date());
+		setStatus_time(new Date());
 		setUser_uid(dto.getUser_uid());
 	}
 
@@ -62,11 +65,11 @@ public class StatusAudit implements Serializable {
 		this.status = status;
 	}
 
-	public Date getStatusTime() {
-		return statusTime;
+	public Date getStatus_time() {
+		return status_time;
 	}
 
-	public void setStatusTime(Date statusTime) {
-		this.statusTime = statusTime;
+	public void setStatus_time(Date status_time) {
+		this.status_time = status_time;
 	}
 }

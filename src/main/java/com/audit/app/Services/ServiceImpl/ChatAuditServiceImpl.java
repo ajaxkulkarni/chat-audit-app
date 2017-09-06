@@ -18,10 +18,4 @@ public class ChatAuditServiceImpl implements IChatAuditService {
 	public ApiStatus saveChatAudits(ChatAuditDTO dto) {
 		return _dao.saveChatAudits(new ChatAudit(dto));
 	}
-
-	public ApiStatus updateUnique(ChatAuditDTO dto) {
-		return _dao.updateUnique(new ChatAudit(dto));
-	}
-	
-	
 }

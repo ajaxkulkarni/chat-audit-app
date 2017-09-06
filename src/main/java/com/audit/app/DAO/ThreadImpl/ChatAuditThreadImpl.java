@@ -1,25 +1,25 @@
 package com.audit.app.DAO.ThreadImpl;
 
-import java.util.List;
+import java.text.SimpleDateFormat;
 
-import org.apache.commons.collections.CollectionUtils;
-import org.hibernate.Query;
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.audit.app.Common.ApiStatus;
 import com.audit.app.Entities.ChatAudit;
 
 public class ChatAuditThreadImpl implements Runnable {
-	
+	private static Logger LOG = Logger.getLogger(ChatAuditThreadImpl.class);
+
 	private SessionFactory sessionFactory;
 	private ChatAudit dto;
 	
+	private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
 	public ChatAuditThreadImpl(SessionFactory sessionFactory, ChatAudit dto) {
 		this.sessionFactory = sessionFactory;
 		this.dto = dto;
 	}
-	
 
 	public void run() {
 		Session session = sessionFactory.openSession();
@@ -28,6 +28,7 @@ public class ChatAuditThreadImpl implements Runnable {
 			session.persist(dto);
 			session.getTransaction().commit();
 		} catch (Exception ex) {
+			LOG.error(ex.getMessage());
 			System.out.println(ex.getLocalizedMessage());
 		} finally {
 			session.close();
